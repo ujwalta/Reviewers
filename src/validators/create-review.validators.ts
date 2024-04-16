@@ -6,6 +6,7 @@ export const createReviewDtoBody = z.object({
     .string({
       required_error: 'comment is required',
     }),
+    restaurantId: z.number(),
   rating: z.enum(['1', '2', '3', '4', '5']),
 })
 

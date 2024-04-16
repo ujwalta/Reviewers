@@ -11,7 +11,7 @@ import { number, z } from 'zod'
 import { createReviewDtoBody } from '../validators/create-review.validators'
 
 export const createRestaurant = async (body: z.infer<typeof createReviewDtoBody>, loggedInUserId: number, restaurantid: number) => {
-  const { comment, rating } = body
+  const { comment, rating, restaurantId } = body
 
 
   let createdRestro: any;
@@ -21,7 +21,7 @@ export const createRestaurant = async (body: z.infer<typeof createReviewDtoBody>
       data: {
         comment,
         date: new Date(),
-        restaurantid,
+        restaurantId,
         userId: loggedInUserId,
         rating: Number(rating)
       },
